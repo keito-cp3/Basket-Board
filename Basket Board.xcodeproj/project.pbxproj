@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E824E2711D5FFDA50095692E /* スクリーンショット 2016-08-14 10.14.33.png in Resources */ = {isa = PBXBuildFile; fileRef = E824E2701D5FFDA50095692E /* スクリーンショット 2016-08-14 10.14.33.png */; };
+		E824E2731D5FFEB50095692E /* BoardSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824E2721D5FFEB50095692E /* BoardSecondController.swift */; };
 		E840C0E51D3A122000659601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E840C0E41D3A122000659601 /* AppDelegate.swift */; };
-		E840C0E71D3A122000659601 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E840C0E61D3A122000659601 /* ViewController.swift */; };
 		E840C0EA1D3A122000659601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E840C0E81D3A122000659601 /* Main.storyboard */; };
-		E840C0EC1D3A122000659601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E840C0EB1D3A122000659601 /* Assets.xcassets */; };
 		E840C0EF1D3A122000659601 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E840C0ED1D3A122000659601 /* LaunchScreen.storyboard */; };
 		E840C0FA1D3A122100659601 /* Basket_BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E840C0F91D3A122100659601 /* Basket_BoardTests.swift */; };
 		E840C1051D3A122100659601 /* Basket_BoardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E840C1041D3A122100659601 /* Basket_BoardUITests.swift */; };
+		E840C1151D3A176A00659601 /* バスケコート.png in Resources */ = {isa = PBXBuildFile; fileRef = E840C1141D3A176A00659601 /* バスケコート.png */; };
+		E88FB8541D5B57FA00011007 /* ScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FB8531D5B57FA00011007 /* ScoreController.swift */; };
+		E88FB8561D5C4B0000011007 /* ScoreSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FB8551D5C4B0000011007 /* ScoreSecondController.swift */; };
+		E8F8C85A1D58D03E007FA3F2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8C8591D58D03E007FA3F2 /* TabBarController.swift */; };
+		E8F8C85C1D58D05A007FA3F2 /* BoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8C85B1D58D05A007FA3F2 /* BoardController.swift */; };
+		E8F8C8601D58D0B0007FA3F2 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8C85F1D58D0B0007FA3F2 /* TimerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E824E2701D5FFDA50095692E /* スクリーンショット 2016-08-14 10.14.33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2016-08-14 10.14.33.png"; sourceTree = "<group>"; };
+		E824E2721D5FFEB50095692E /* BoardSecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardSecondController.swift; sourceTree = "<group>"; };
 		E840C0E11D3A122000659601 /* Basket Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Basket Board.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E840C0E41D3A122000659601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E840C0E61D3A122000659601 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E840C0E91D3A122000659601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E840C0EB1D3A122000659601 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E840C0EE1D3A122000659601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E840C0F01D3A122000659601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E840C0F51D3A122100659601 /* Basket BoardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Basket BoardTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +53,12 @@
 		E840C1001D3A122100659601 /* Basket BoardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Basket BoardUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E840C1041D3A122100659601 /* Basket_BoardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket_BoardUITests.swift; sourceTree = "<group>"; };
 		E840C1061D3A122100659601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E840C1141D3A176A00659601 /* バスケコート.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "バスケコート.png"; sourceTree = "<group>"; };
+		E88FB8531D5B57FA00011007 /* ScoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreController.swift; sourceTree = "<group>"; };
+		E88FB8551D5C4B0000011007 /* ScoreSecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreSecondController.swift; sourceTree = "<group>"; };
+		E8F8C8591D58D03E007FA3F2 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E8F8C85B1D58D05A007FA3F2 /* BoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardController.swift; sourceTree = "<group>"; };
+		E8F8C85F1D58D0B0007FA3F2 /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +109,18 @@
 		E840C0E31D3A122000659601 /* Basket Board */ = {
 			isa = PBXGroup;
 			children = (
+				E824E2701D5FFDA50095692E /* スクリーンショット 2016-08-14 10.14.33.png */,
+				E840C1141D3A176A00659601 /* バスケコート.png */,
 				E840C0E41D3A122000659601 /* AppDelegate.swift */,
-				E840C0E61D3A122000659601 /* ViewController.swift */,
 				E840C0E81D3A122000659601 /* Main.storyboard */,
-				E840C0EB1D3A122000659601 /* Assets.xcassets */,
+				E8F8C85B1D58D05A007FA3F2 /* BoardController.swift */,
+				E824E2721D5FFEB50095692E /* BoardSecondController.swift */,
+				E8F8C85F1D58D0B0007FA3F2 /* TimerController.swift */,
+				E88FB8531D5B57FA00011007 /* ScoreController.swift */,
+				E88FB8551D5C4B0000011007 /* ScoreSecondController.swift */,
 				E840C0ED1D3A122000659601 /* LaunchScreen.storyboard */,
 				E840C0F01D3A122000659601 /* Info.plist */,
+				E8F8C8591D58D03E007FA3F2 /* TabBarController.swift */,
 			);
 			path = "Basket Board";
 			sourceTree = "<group>";
@@ -230,8 +248,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E840C0EF1D3A122000659601 /* LaunchScreen.storyboard in Resources */,
-				E840C0EC1D3A122000659601 /* Assets.xcassets in Resources */,
 				E840C0EA1D3A122000659601 /* Main.storyboard in Resources */,
+				E824E2711D5FFDA50095692E /* スクリーンショット 2016-08-14 10.14.33.png in Resources */,
+				E840C1151D3A176A00659601 /* バスケコート.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E840C0E71D3A122000659601 /* ViewController.swift in Sources */,
+				E88FB8541D5B57FA00011007 /* ScoreController.swift in Sources */,
 				E840C0E51D3A122000659601 /* AppDelegate.swift in Sources */,
+				E824E2731D5FFEB50095692E /* BoardSecondController.swift in Sources */,
+				E88FB8561D5C4B0000011007 /* ScoreSecondController.swift in Sources */,
+				E8F8C8601D58D0B0007FA3F2 /* TimerController.swift in Sources */,
+				E8F8C85A1D58D03E007FA3F2 /* TabBarController.swift in Sources */,
+				E8F8C85C1D58D05A007FA3F2 /* BoardController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +506,7 @@
 				E840C10B1D3A122100659601 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E840C10C1D3A122100659601 /* Build configuration list for PBXNativeTarget "Basket BoardTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +515,7 @@
 				E840C10E1D3A122100659601 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E840C10F1D3A122100659601 /* Build configuration list for PBXNativeTarget "Basket BoardUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +524,7 @@
 				E840C1111D3A122100659601 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

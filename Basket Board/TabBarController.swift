@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TabBarController.swift
 //  Basket Board
 //
 //  Created by 松井恵人 on 2016/08/08.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
