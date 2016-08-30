@@ -13,7 +13,7 @@ class ScoreSecondController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        showAlart()
+       
         
         
 
@@ -25,25 +25,7 @@ class ScoreSecondController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func showAlart() {
-        
-        let alertController = UIAlertController(title: "タイトル", message: "ここにメッセージ", preferredStyle: .Alert)
-        
-        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
-            (action:UIAlertAction!) -> Void in
-
-            let text = alertController.textFields![0] as UITextField
-           
-            print(text.text!)
-            
-        })
-        alertController.addAction(defaultAction)
-        alertController.addTextFieldWithConfigurationHandler({(text:UITextField) -> Void in
-            text.placeholder = "kokomi"
-        })
-        self.presentViewController(alertController, animated: true, completion: nil)
-        
-    }
+    
 
     /*
     // MARK: - Navigation

@@ -1,14 +1,14 @@
 //
-//  BoardSecondController.swift
+//  Practice2ViewController.swift
 //  Basket Board
 //
-//  Created by 松井恵人 on 2016/08/14.
+//  Created by 松井恵人 on 2016/08/30.
 //  Copyright © 2016年 松井恵人. All rights reserved.
 //
 
 import UIKit
 
-class BoardSecondController: UIViewController {
+class Practice2ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +19,6 @@ class BoardSecondController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func back() {
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
 

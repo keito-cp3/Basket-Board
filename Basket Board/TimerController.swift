@@ -21,6 +21,13 @@ class TimerController: UIViewController {
     var SubTimerCount: Int = 24
     var SubTimerNumber: NSTimer = NSTimer()
     
+    var MainTimerCount: Int = 600
+    var MainTimerNumber: NSTimer = NSTimer()
+    
+    
+    
+    
+    
     
     
     
@@ -28,9 +35,6 @@ class TimerController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-
         // Do any additional setup after loading the view.
     }
 
@@ -72,22 +76,58 @@ class TimerController: UIViewController {
     
     
     @IBAction func MainMinutePlus() {
-        
+        if !MainTimerNumber.valid {
+            MainTimerCount = MainTimerCount + 60
+        }
+        let s = MainTimerCount % 60
+        let m = MainTimerCount / 60
+        MainTimer.text = String(format: "%02d:%02d", m, s)
     }
     @IBAction func MainMinuteMinus() {
-        
+        if !MainTimerNumber.valid {
+            MainTimerCount = MainTimerCount - 60
+        }
+        if MainTimerCount < 0 {
+            MainTimerCount = MainTimerCount + 60
+        }
+        let s = MainTimerCount % 60
+        var m = MainTimerCount / 60
+        MainTimer.text = String(format: "%02d:%02d", m, s)
     }
     @IBAction func MainSecondPlus() {
-        
+        if !MainTimerNumber.valid {
+            MainTimerCount = MainTimerCount + 1
+        }
+        let s = MainTimerCount % 60
+        let m = MainTimerCount / 60
+        MainTimer.text = String(format: "%02d:%02d", m, s)
     }
     @IBAction func MainSecondMinus() {
+        if !MainTimerNumber.valid {
+            MainTimerCount = MainTimerCount - 1
+        }
+        if MainTimerCount < 0 {
+            MainTimerCount = 0
+        }
+        let s = MainTimerCount % 60
+        let m = MainTimerCount / 60
+        MainTimer.text = String(format: "%02d:%02d", m, s)
         
     }
     @IBAction func MainClear() {
-        
+        if !MainTimerNumber.valid {
+            MainTimerCount = 0
+        }
+        let s = MainTimerCount % 60
+        let m = MainTimerCount / 60
+        MainTimer.text = String(format: "%02d:%02d", m, s)
     }
     @IBAction func MainStart() {
-        
+        if !MainTimerNumber.valid {
+            MainTimerNumber = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(TimerController.Main), userInfo: nil, repeats: true)
+        }else {
+            MainTimerNumber.invalidate()
+        }
     }
     
     
@@ -127,6 +167,21 @@ class TimerController: UIViewController {
             SubTimerNumber.invalidate()
         }
     }
+    
+    func Main() {
+        MainTimerCount = MainTimerCount - 1
+        if MainTimerCount <= 0 {
+            MainTimerCount = 0
+            MainTimerNumber.invalidate()
+        }
+        let s = MainTimerCount % 60
+        let m = MainTimerCount / 60
+        MainTimer.text = String(format: "%02d:%02d", m, s)
+    }
+    
+    
+    
+    
         
     
     
