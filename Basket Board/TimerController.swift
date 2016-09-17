@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class TimerController: UIViewController {
     
@@ -24,8 +25,7 @@ class TimerController: UIViewController {
     var MainTimerCount: Int = 600
     var MainTimerNumber: NSTimer = NSTimer()
     
-    
-    
+    var audio: AVAudioPlayer!
     
     
     
@@ -42,6 +42,14 @@ class TimerController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    
+    
+    
+    
+    
     
     @IBAction func GuestPlus() {
         NumberScoreGuest = NumberScoreGuest + 1
@@ -75,6 +83,16 @@ class TimerController: UIViewController {
     }
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @IBAction func MainMinutePlus() {
         if !MainTimerNumber.valid {
             MainTimerCount = MainTimerCount + 60
@@ -91,7 +109,7 @@ class TimerController: UIViewController {
             MainTimerCount = MainTimerCount + 60
         }
         let s = MainTimerCount % 60
-        var m = MainTimerCount / 60
+        let m = MainTimerCount / 60
         MainTimer.text = String(format: "%02d:%02d", m, s)
     }
     @IBAction func MainSecondPlus() {
@@ -131,6 +149,15 @@ class TimerController: UIViewController {
     }
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @IBAction func SubPlus() {
         if !SubTimerNumber.valid {
             SubTimerCount = SubTimerCount + 1
@@ -149,7 +176,6 @@ class TimerController: UIViewController {
         }else {
             SubTimerNumber.invalidate()
         }
-        
     }
     @IBAction func Sub24() {
         SubTimerCount = 24
@@ -160,19 +186,38 @@ class TimerController: UIViewController {
         SubTimer.text = String(SubTimerCount)
     }
     
+    
+    
+    
+    
+    
+    
     func Sub() {
         SubTimerCount = SubTimerCount - 1
         SubTimer.text = String(SubTimerCount)
         if SubTimerCount == 0 {
             SubTimerNumber.invalidate()
+            let audioPath = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("basketball_buzzer2", ofType: "mp3")!)
+            audio = try? AVAudioPlayer(contentsOfURL: audioPath)
+            audio.play()
         }
     }
+    
+    
+    
+    
+    
+    
+    
     
     func Main() {
         MainTimerCount = MainTimerCount - 1
         if MainTimerCount <= 0 {
             MainTimerCount = 0
             MainTimerNumber.invalidate()
+            let audioPath = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("basketball_buzzer2", ofType: "mp3")!)
+            audio = try? AVAudioPlayer(contentsOfURL: audioPath)
+            audio.play()
         }
         let s = MainTimerCount % 60
         let m = MainTimerCount / 60

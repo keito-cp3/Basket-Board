@@ -25,6 +25,7 @@ class BoardController: UIViewController {
     @IBOutlet var change: UIButton!
     
     
+    
     @IBOutlet var BasketCourt: UIImageView!
     let Pic1 = UIImage(named: "BasketPic1")
     let Pic2 = UIImage(named: "BasketPic2")
@@ -40,28 +41,32 @@ class BoardController: UIViewController {
         red3.layer.masksToBounds = true
         red4.layer.masksToBounds = true
         red5.layer.masksToBounds = true
-        red1.layer.cornerRadius = 11.0
-        red2.layer.cornerRadius = 11.0
-        red3.layer.cornerRadius = 11.0
-        red4.layer.cornerRadius = 11.0
-        red5.layer.cornerRadius = 11.0
+        red1.layer.cornerRadius = 14.0
+        red2.layer.cornerRadius = 14.0
+        red3.layer.cornerRadius = 14.0
+        red4.layer.cornerRadius = 14.0
+        red5.layer.cornerRadius = 14.0
         
         blue1.layer.masksToBounds = true
         blue2.layer.masksToBounds = true
         blue3.layer.masksToBounds = true
         blue4.layer.masksToBounds = true
         blue5.layer.masksToBounds = true
-        blue1.layer.cornerRadius = 11.0
-        blue2.layer.cornerRadius = 11.0
-        blue3.layer.cornerRadius = 11.0
-        blue4.layer.cornerRadius = 11.0
-        blue5.layer.cornerRadius = 11.0
+        blue1.layer.cornerRadius = 14.0
+        blue2.layer.cornerRadius = 14.0
+        blue3.layer.cornerRadius = 14.0
+        blue4.layer.cornerRadius = 14.0
+        blue5.layer.cornerRadius = 14.0
         
         green.layer.masksToBounds = true
-        green.layer.cornerRadius = 10.0
+        green.layer.cornerRadius = 12.0
         
         change.layer.masksToBounds = true
-        change.layer.cornerRadius = 5.0
+        change.layer.cornerRadius = 3.0
+        
+        BasketCourt.layer.masksToBounds = true
+        BasketCourt.layer.cornerRadius = 5.0
+        
         
         
         
