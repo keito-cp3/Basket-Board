@@ -21,6 +21,8 @@ class BoardController: UIViewController {
     @IBOutlet var blue4: UILabel!
     @IBOutlet var blue5: UILabel!
     @IBOutlet var green: UILabel!
+    @IBOutlet var vview: UIView!
+    @IBOutlet var vvview: UIView!
     
     @IBOutlet var change: UIButton!
     
@@ -61,11 +63,17 @@ class BoardController: UIViewController {
         green.layer.masksToBounds = true
         green.layer.cornerRadius = 12.0
         
-        change.layer.masksToBounds = true
-        change.layer.cornerRadius = 3.0
-        
         BasketCourt.layer.masksToBounds = true
-        BasketCourt.layer.cornerRadius = 5.0
+        BasketCourt.layer.cornerRadius = 15.0
+        
+        vview.layer.masksToBounds = true
+        vview.layer.cornerRadius = 15.5
+        vvview.layer.masksToBounds = true
+        vvview.layer.cornerRadius = 24.0
+
+        
+        change.layer.masksToBounds = true
+        change.layer.cornerRadius = 23.0
         
         
         
@@ -93,6 +101,7 @@ class BoardController: UIViewController {
         blue4.tag = 14
         blue5.tag = 15
         green.tag = 100
+        
         // Do any additional setup after loading the view.
     }
     

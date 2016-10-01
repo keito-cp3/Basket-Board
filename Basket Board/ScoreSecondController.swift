@@ -10,6 +10,10 @@ import UIKit
 
 class ScoreSecondController: UIViewController,UITextFieldDelegate {
     
+    var number: Int!
+    var number2 : Int!
+    var homeDic : [String: String] = [:]
+    
     @IBOutlet var homeScore: UITextField!
     @IBOutlet var guestScore: UITextField!
     @IBOutlet var no: UITextField!
@@ -62,16 +66,6 @@ class ScoreSecondController: UIViewController,UITextFieldDelegate {
     @IBOutlet var stl7: UITextField!
     @IBOutlet var stl8: UITextField!
     @IBOutlet var stl9: UITextField!
-    @IBOutlet var fg: UITextField!
-    @IBOutlet var fg1: UITextField!
-    @IBOutlet var fg2: UITextField!
-    @IBOutlet var fg3: UITextField!
-    @IBOutlet var fg4: UITextField!
-    @IBOutlet var fg5: UITextField!
-    @IBOutlet var fg6: UITextField!
-    @IBOutlet var fg7: UITextField!
-    @IBOutlet var fg8: UITextField!
-    @IBOutlet var fg9: UITextField!
     @IBOutlet var name: UITextField!
     @IBOutlet var name1: UITextField!
     @IBOutlet var name2: UITextField!
@@ -89,6 +83,9 @@ class ScoreSecondController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSLog("number2の値は%dだ", number2)
+       
         
         homeScore.delegate = self
         guestScore.delegate = self
@@ -142,16 +139,6 @@ class ScoreSecondController: UIViewController,UITextFieldDelegate {
         stl7.delegate = self
         stl8.delegate = self
         stl9.delegate = self
-        fg.delegate = self
-        fg1.delegate = self
-        fg2.delegate = self
-        fg3.delegate = self
-        fg4.delegate = self
-        fg5.delegate = self
-        fg6.delegate = self
-        fg7.delegate = self
-        fg8.delegate = self
-        fg9.delegate = self
         name.delegate = self
         name1.delegate = self
         name2.delegate = self
@@ -163,224 +150,197 @@ class ScoreSecondController: UIViewController,UITextFieldDelegate {
         name8.delegate = self
         name9.delegate = self
         
-        if let homeText = scoreDefaults.stringForKey("Home") {
+        if let homeText = scoreDefaults.stringForKey("Home"+String(number)) {
             homeScore.text = homeText
         }
-        if let guestText = scoreDefaults.stringForKey("Guest") {
+        if let guestText = scoreDefaults.stringForKey("Guest"+String(number)) {
             guestScore.text = guestText
         }
-        if let noText = scoreDefaults.stringForKey("No") {
+        if let noText = scoreDefaults.stringForKey("No"+String(number)) {
             no.text = noText
         }
-        if let no1Text = scoreDefaults.stringForKey("No1") {
+        if let no1Text = scoreDefaults.stringForKey("No1"+String(number)) {
             no1.text = no1Text
         }
-        if let no2Text = scoreDefaults.stringForKey("No2") {
+        if let no2Text = scoreDefaults.stringForKey("No2"+String(number)) {
             no2.text = no2Text
         }
-        if let no3Text = scoreDefaults.stringForKey("No3") {
+        if let no3Text = scoreDefaults.stringForKey("No3"+String(number)) {
             no3.text = no3Text
         }
-        if let no4Text = scoreDefaults.stringForKey("No4") {
+        if let no4Text = scoreDefaults.stringForKey("No4"+String(number)) {
             no4.text = no4Text
         }
-        if let no5Text = scoreDefaults.stringForKey("No5") {
+        if let no5Text = scoreDefaults.stringForKey("No5"+String(number)) {
             no5.text = no5Text
         }
-        if let no6Text = scoreDefaults.stringForKey("No6") {
+        if let no6Text = scoreDefaults.stringForKey("No6"+String(number)) {
             no6.text = no6Text
         }
-        if let no7Text = scoreDefaults.stringForKey("No7") {
+        if let no7Text = scoreDefaults.stringForKey("No7"+String(number)) {
             no7.text = no7Text
         }
-        if let no8Text = scoreDefaults.stringForKey("No8") {
+        if let no8Text = scoreDefaults.stringForKey("No8"+String(number)) {
             no8.text = no8Text
         }
-        if let no9Text = scoreDefaults.stringForKey("No9") {
+        if let no9Text = scoreDefaults.stringForKey("No9"+String(number)) {
             no9.text = no9Text
         }
-        if let ptsText = scoreDefaults.stringForKey("Pts") {
+        if let ptsText = scoreDefaults.stringForKey("Pts"+String(number)) {
             pts.text = ptsText
         }
-        if let pts1Text = scoreDefaults.stringForKey("Pts1") {
+        if let pts1Text = scoreDefaults.stringForKey("Pts1"+String(number)) {
             pts1.text = pts1Text
         }
-        if let pts2Text = scoreDefaults.stringForKey("Pts2") {
+        if let pts2Text = scoreDefaults.stringForKey("Pts2"+String(number)) {
             pts2.text = pts2Text
         }
-        if let pts3Text = scoreDefaults.stringForKey("Pts3") {
+        if let pts3Text = scoreDefaults.stringForKey("Pts3"+String(number)) {
             pts3.text = pts3Text
         }
-        if let pts4Text = scoreDefaults.stringForKey("Pts4") {
+        if let pts4Text = scoreDefaults.stringForKey("Pts4"+String(number)) {
             pts4.text = pts4Text
         }
-        if let pts5Text = scoreDefaults.stringForKey("Pts5") {
+        if let pts5Text = scoreDefaults.stringForKey("Pts5"+String(number)) {
             pts5.text = pts5Text
         }
-        if let pts6Text = scoreDefaults.stringForKey("Pts6") {
+        if let pts6Text = scoreDefaults.stringForKey("Pts6"+String(number)) {
             pts6.text = pts6Text
         }
-        if let pts7Text = scoreDefaults.stringForKey("Pts7") {
+        if let pts7Text = scoreDefaults.stringForKey("Pts7"+String(number)) {
             pts7.text = pts7Text
         }
-        if let pts8Text = scoreDefaults.stringForKey("Pts8") {
+        if let pts8Text = scoreDefaults.stringForKey("Pts8"+String(number)) {
             pts8.text = pts8Text
         }
-        if let pts9Text = scoreDefaults.stringForKey("Pts9") {
+        if let pts9Text = scoreDefaults.stringForKey("Pts9"+String(number)) {
             pts9.text = pts9Text
         }
-        if let astText = scoreDefaults.stringForKey("Ast") {
+        if let astText = scoreDefaults.stringForKey("Ast"+String(number)) {
             ast.text = astText
         }
-        if let ast1Text = scoreDefaults.stringForKey("Ast1") {
+        if let ast1Text = scoreDefaults.stringForKey("Ast1"+String(number)) {
             ast1.text = ast1Text
         }
-        if let ast2Text = scoreDefaults.stringForKey("Ast2") {
+        if let ast2Text = scoreDefaults.stringForKey("Ast2"+String(number)) {
             ast2.text = ast2Text
         }
-        if let ast3Text = scoreDefaults.stringForKey("Ast3") {
+        if let ast3Text = scoreDefaults.stringForKey("Ast3"+String(number)) {
             ast3.text = ast3Text
         }
-        if let ast4Text = scoreDefaults.stringForKey("Ast4") {
+        if let ast4Text = scoreDefaults.stringForKey("Ast4"+String(number)) {
             ast4.text = ast4Text
         }
-        if let ast5Text = scoreDefaults.stringForKey("Ast5") {
+        if let ast5Text = scoreDefaults.stringForKey("Ast5"+String(number)) {
             ast5.text = ast5Text
         }
-        if let ast6Text = scoreDefaults.stringForKey("Ast6") {
+        if let ast6Text = scoreDefaults.stringForKey("Ast6"+String(number)) {
             ast6.text = ast6Text
         }
-        if let ast7Text = scoreDefaults.stringForKey("Ast7") {
+        if let ast7Text = scoreDefaults.stringForKey("Ast7"+String(number)) {
             ast7.text = ast7Text
         }
-        if let ast8Text = scoreDefaults.stringForKey("Ast8") {
+        if let ast8Text = scoreDefaults.stringForKey("Ast8"+String(number)) {
             ast8.text = ast8Text
         }
-        if let ast9Text = scoreDefaults.stringForKey("Ast9") {
+        if let ast9Text = scoreDefaults.stringForKey("Ast9"+String(number)) {
             ast9.text = ast9Text
         }
-        if let rebText = scoreDefaults.stringForKey("Reb") {
+        if let rebText = scoreDefaults.stringForKey("Reb"+String(number)) {
             reb.text = rebText
         }
-        if let reb1Text = scoreDefaults.stringForKey("Reb1") {
+        if let reb1Text = scoreDefaults.stringForKey("Reb1"+String(number)) {
             reb1.text = reb1Text
         }
-        if let reb2Text = scoreDefaults.stringForKey("Reb2") {
+        if let reb2Text = scoreDefaults.stringForKey("Reb2"+String(number)) {
             reb2.text = reb2Text
         }
-        if let reb3Text = scoreDefaults.stringForKey("Reb3") {
+        if let reb3Text = scoreDefaults.stringForKey("Reb3"+String(number)) {
             reb3.text = reb3Text
         }
-        if let reb4Text = scoreDefaults.stringForKey("Reb4") {
+        if let reb4Text = scoreDefaults.stringForKey("Reb4"+String(number)) {
             reb4.text = reb4Text
         }
-        if let reb5Text = scoreDefaults.stringForKey("Reb5") {
+        if let reb5Text = scoreDefaults.stringForKey("Reb5"+String(number)) {
             reb5.text = reb5Text
         }
-        if let reb6Text = scoreDefaults.stringForKey("Reb6") {
+        if let reb6Text = scoreDefaults.stringForKey("Reb6"+String(number)) {
             reb6.text = reb6Text
         }
-        if let reb7Text = scoreDefaults.stringForKey("Reb7") {
+        if let reb7Text = scoreDefaults.stringForKey("Reb7"+String(number)) {
             reb7.text = reb7Text
         }
-        if let reb8Text = scoreDefaults.stringForKey("Reb8") {
+        if let reb8Text = scoreDefaults.stringForKey("Reb8"+String(number)) {
             reb8.text = reb8Text
         }
-        if let reb9Text = scoreDefaults.stringForKey("Reb9") {
+        if let reb9Text = scoreDefaults.stringForKey("Reb9"+String(number)) {
             reb9.text = reb9Text
         }
-        if let stlText = scoreDefaults.stringForKey("Stl") {
+        if let stlText = scoreDefaults.stringForKey("Stl"+String(number)) {
             stl.text = stlText
         }
-        if let stl1Text = scoreDefaults.stringForKey("Stl1") {
+        if let stl1Text = scoreDefaults.stringForKey("Stl1"+String(number)) {
             stl1.text = stl1Text
         }
-        if let stl2Text = scoreDefaults.stringForKey("Stl2") {
+        if let stl2Text = scoreDefaults.stringForKey("Stl2"+String(number)) {
             stl2.text = stl2Text
         }
-        if let stl3Text = scoreDefaults.stringForKey("Stl3") {
+        if let stl3Text = scoreDefaults.stringForKey("Stl3"+String(number)) {
             stl3.text = stl3Text
         }
-        if let stl4Text = scoreDefaults.stringForKey("Stl4") {
+        if let stl4Text = scoreDefaults.stringForKey("Stl4"+String(number)) {
             stl4.text = stl4Text
         }
-        if let stl5Text = scoreDefaults.stringForKey("Stl5") {
+        if let stl5Text = scoreDefaults.stringForKey("Stl5"+String(number)) {
             stl5.text = stl5Text
         }
-        if let stl6Text = scoreDefaults.stringForKey("Stl6") {
+        if let stl6Text = scoreDefaults.stringForKey("Stl6"+String(number)) {
             stl6.text = stl6Text
         }
-        if let stl7Text = scoreDefaults.stringForKey("Stl7") {
+        if let stl7Text = scoreDefaults.stringForKey("Stl7"+String(number)) {
             stl7.text = stl7Text
         }
-        if let stl8Text = scoreDefaults.stringForKey("Stl8") {
+        if let stl8Text = scoreDefaults.stringForKey("Stl8"+String(number)) {
             stl8.text = stl8Text
         }
-        if let stl9Text = scoreDefaults.stringForKey("Stl9") {
+        if let stl9Text = scoreDefaults.stringForKey("Stl9"+String(number)) {
             stl9.text = stl9Text
         }
-        if let fgText = scoreDefaults.stringForKey("FG") {
-            fg.text = fgText
-        }
-        if let fg1Text = scoreDefaults.stringForKey("FG1") {
-            fg1.text = fg1Text
-        }
-        if let fg2Text = scoreDefaults.stringForKey("FG2") {
-            fg2.text = fg2Text
-        }
-        if let fg3Text = scoreDefaults.stringForKey("FG3") {
-            fg3.text = fg3Text
-        }
-        if let fg4Text = scoreDefaults.stringForKey("FG4") {
-            fg4.text = fg4Text
-        }
-        if let fg5Text = scoreDefaults.stringForKey("FG5") {
-            fg5.text = fg5Text
-        }
-        if let fg6Text = scoreDefaults.stringForKey("FG6") {
-            fg6.text = fg6Text
-        }
-        if let fg7Text = scoreDefaults.stringForKey("FG7") {
-            fg7.text = fg7Text
-        }
-        if let fg8Text = scoreDefaults.stringForKey("FG8") {
-            fg8.text = fg8Text
-        }
-        if let fg9Text = scoreDefaults.stringForKey("FG9") {
-            fg9.text = fg9Text
-        }
-        if let nameText = scoreDefaults.stringForKey("Name") {
+        if let nameText = scoreDefaults.stringForKey("Name"+String(number)) {
             name.text = nameText
         }
-        if let name1Text = scoreDefaults.stringForKey("Name1") {
+        if let name1Text = scoreDefaults.stringForKey("Name1"+String(number)) {
             name1.text = name1Text
         }
-        if let name2Text = scoreDefaults.stringForKey("Name2") {
+        if let name2Text = scoreDefaults.stringForKey("Name2"+String(number)) {
             name2.text = name2Text
         }
-        if let name3Text = scoreDefaults.stringForKey("Name3") {
+        if let name3Text = scoreDefaults.stringForKey("Name3"+String(number)) {
             name3.text = name3Text
         }
-        if let name4Text = scoreDefaults.stringForKey("Name4") {
+        if let name4Text = scoreDefaults.stringForKey("Name4"+String(number)) {
             name4.text = name4Text
         }
-        if let name5Text = scoreDefaults.stringForKey("Name5") {
+        if let name5Text = scoreDefaults.stringForKey("Name5"+String(number)) {
             name5.text = name5Text
         }
-        if let name6Text = scoreDefaults.stringForKey("Name6") {
+        if let name6Text = scoreDefaults.stringForKey("Name6"+String(number)) {
             name6.text = name6Text
         }
-        if let name7Text = scoreDefaults.stringForKey("Name7") {
+        if let name7Text = scoreDefaults.stringForKey("Name7"+String(number)) {
             name7.text = name7Text
         }
-        if let name8Text = scoreDefaults.stringForKey("Name8") {
+        if let name8Text = scoreDefaults.stringForKey("Name8"+String(number)) {
             name8.text = name8Text
         }
-        if let name9Text = scoreDefaults.stringForKey("Name9") {
+        if let name9Text = scoreDefaults.stringForKey("Name9"+String(number)) {
             name9.text = name9Text
         }
         
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+            }
     
         
         
@@ -398,86 +358,75 @@ class ScoreSecondController: UIViewController,UITextFieldDelegate {
         
     }
     
-    func textFieldShouldReturn(textField:UITextField) -> Bool {
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
         
-        self.view.endEditing(true)
-        
-        scoreDefaults.setObject(homeScore.text, forKey: "Home")
-        scoreDefaults.setObject(guestScore.text, forKey: "Guest")
-        scoreDefaults.setObject(no.text, forKey: "No")
-        scoreDefaults.setObject(no1.text, forKey: "No1")
-        scoreDefaults.setObject(no2.text, forKey: "No2")
-        scoreDefaults.setObject(no3.text, forKey: "No3")
-        scoreDefaults.setObject(no4.text, forKey: "No4")
-        scoreDefaults.setObject(no5.text, forKey: "No5")
-        scoreDefaults.setObject(no6.text, forKey: "No6")
-        scoreDefaults.setObject(no7.text, forKey: "No7")
-        scoreDefaults.setObject(no8.text, forKey: "No8")
-        scoreDefaults.setObject(no9.text, forKey: "No9")
-        scoreDefaults.setObject(pts.text, forKey: "Pts")
-        scoreDefaults.setObject(pts1.text, forKey: "Pts1")
-        scoreDefaults.setObject(pts2.text, forKey: "Pts2")
-        scoreDefaults.setObject(pts3.text, forKey: "Pts3")
-        scoreDefaults.setObject(pts4.text, forKey: "Pts4")
-        scoreDefaults.setObject(pts5.text, forKey: "Pts5")
-        scoreDefaults.setObject(pts6.text, forKey: "Pts6")
-        scoreDefaults.setObject(pts7.text, forKey: "Pts7")
-        scoreDefaults.setObject(pts8.text, forKey: "Pts8")
-        scoreDefaults.setObject(pts9.text, forKey: "Pts9")
-        scoreDefaults.setObject(ast.text, forKey: "Ast")
-        scoreDefaults.setObject(ast1.text, forKey: "Ast1")
-        scoreDefaults.setObject(ast2.text, forKey: "Ast2")
-        scoreDefaults.setObject(ast3.text, forKey: "Ast3")
-        scoreDefaults.setObject(ast4.text, forKey: "Ast4")
-        scoreDefaults.setObject(ast5.text, forKey: "Ast5")
-        scoreDefaults.setObject(ast6.text, forKey: "Ast6")
-        scoreDefaults.setObject(ast7.text, forKey: "Ast7")
-        scoreDefaults.setObject(ast8.text, forKey: "Ast8")
-        scoreDefaults.setObject(ast9.text, forKey: "Ast9")
-        scoreDefaults.setObject(reb.text, forKey: "Reb")
-        scoreDefaults.setObject(reb1.text, forKey: "Reb1")
-        scoreDefaults.setObject(reb2.text, forKey: "Reb2")
-        scoreDefaults.setObject(reb3.text, forKey: "Reb3")
-        scoreDefaults.setObject(reb4.text, forKey: "Reb4")
-        scoreDefaults.setObject(reb5.text, forKey: "Reb5")
-        scoreDefaults.setObject(reb6.text, forKey: "Reb6")
-        scoreDefaults.setObject(reb7.text, forKey: "Reb7")
-        scoreDefaults.setObject(reb8.text, forKey: "Reb8")
-        scoreDefaults.setObject(reb9.text, forKey: "Reb9")
-        scoreDefaults.setObject(stl.text, forKey: "Stl")
-        scoreDefaults.setObject(stl1.text, forKey: "Stl1")
-        scoreDefaults.setObject(stl2.text, forKey: "Stl2")
-        scoreDefaults.setObject(stl3.text, forKey: "Stl3")
-        scoreDefaults.setObject(stl4.text, forKey: "Stl4")
-        scoreDefaults.setObject(stl5.text, forKey: "Stl5")
-        scoreDefaults.setObject(stl6.text, forKey: "Stl6")
-        scoreDefaults.setObject(stl7.text, forKey: "Stl7")
-        scoreDefaults.setObject(stl8.text, forKey: "Stl8")
-        scoreDefaults.setObject(stl9.text, forKey: "Stl9")
-        scoreDefaults.setObject(fg.text, forKey: "FG")
-        scoreDefaults.setObject(fg1.text, forKey: "FG1")
-        scoreDefaults.setObject(fg2.text, forKey: "FG2")
-        scoreDefaults.setObject(fg3.text, forKey: "FG3")
-        scoreDefaults.setObject(fg4.text, forKey: "FG4")
-        scoreDefaults.setObject(fg5.text, forKey: "FG5")
-        scoreDefaults.setObject(fg6.text, forKey: "FG6")
-        scoreDefaults.setObject(fg7.text, forKey: "FG7")
-        scoreDefaults.setObject(fg8.text, forKey: "FG8")
-        scoreDefaults.setObject(fg9.text, forKey: "FG9")
-        scoreDefaults.setObject(name.text, forKey: "Name")
-        scoreDefaults.setObject(name1.text, forKey: "Name1")
-        scoreDefaults.setObject(name2.text, forKey: "Name2")
-        scoreDefaults.setObject(name3.text, forKey: "Name3")
-        scoreDefaults.setObject(name4.text, forKey: "Name4")
-        scoreDefaults.setObject(name5.text, forKey: "Name5")
-        scoreDefaults.setObject(name6.text, forKey: "Name6")
-        scoreDefaults.setObject(name7.text, forKey: "Name7")
-        scoreDefaults.setObject(name8.text, forKey: "Name8")
-        scoreDefaults.setObject(name9.text, forKey: "Name9")
+    
+        scoreDefaults.setObject(homeScore.text, forKey: "Home"+String(number))
+        scoreDefaults.setObject(guestScore.text, forKey: "Guest"+String(number))
+        scoreDefaults.setObject(no.text, forKey: "No"+String(number))
+        scoreDefaults.setObject(no1.text, forKey: "No1"+String(number))
+        scoreDefaults.setObject(no2.text, forKey: "No2"+String(number))
+        scoreDefaults.setObject(no3.text, forKey: "No3"+String(number))
+        scoreDefaults.setObject(no4.text, forKey: "No4"+String(number))
+        scoreDefaults.setObject(no5.text, forKey: "No5"+String(number))
+        scoreDefaults.setObject(no6.text, forKey: "No6"+String(number))
+        scoreDefaults.setObject(no7.text, forKey: "No7"+String(number))
+        scoreDefaults.setObject(no8.text, forKey: "No8"+String(number))
+        scoreDefaults.setObject(no9.text, forKey: "No9"+String(number))
+        scoreDefaults.setObject(pts.text, forKey: "Pts"+String(number))
+        scoreDefaults.setObject(pts1.text, forKey: "Pts1"+String(number))
+        scoreDefaults.setObject(pts2.text, forKey: "Pts2"+String(number))
+        scoreDefaults.setObject(pts3.text, forKey: "Pts3"+String(number))
+        scoreDefaults.setObject(pts4.text, forKey: "Pts4"+String(number))
+        scoreDefaults.setObject(pts5.text, forKey: "Pts5"+String(number))
+        scoreDefaults.setObject(pts6.text, forKey: "Pts6"+String(number))
+        scoreDefaults.setObject(pts7.text, forKey: "Pts7"+String(number))
+        scoreDefaults.setObject(pts8.text, forKey: "Pts8"+String(number))
+        scoreDefaults.setObject(pts9.text, forKey: "Pts9"+String(number))
+        scoreDefaults.setObject(ast.text, forKey: "Ast"+String(number))
+        scoreDefaults.setObject(ast1.text, forKey: "Ast1"+String(number))
+        scoreDefaults.setObject(ast2.text, forKey: "Ast2"+String(number))
+        scoreDefaults.setObject(ast3.text, forKey: "Ast3"+String(number))
+        scoreDefaults.setObject(ast4.text, forKey: "Ast4"+String(number))
+        scoreDefaults.setObject(ast5.text, forKey: "Ast5"+String(number))
+        scoreDefaults.setObject(ast6.text, forKey: "Ast6"+String(number))
+        scoreDefaults.setObject(ast7.text, forKey: "Ast7"+String(number))
+        scoreDefaults.setObject(ast8.text, forKey: "Ast8"+String(number))
+        scoreDefaults.setObject(ast9.text, forKey: "Ast9"+String(number))
+        scoreDefaults.setObject(reb.text, forKey: "Reb"+String(number))
+        scoreDefaults.setObject(reb1.text, forKey: "Reb1"+String(number))
+        scoreDefaults.setObject(reb2.text, forKey: "Reb2"+String(number))
+        scoreDefaults.setObject(reb3.text, forKey: "Reb3"+String(number))
+        scoreDefaults.setObject(reb4.text, forKey: "Reb4"+String(number))
+        scoreDefaults.setObject(reb5.text, forKey: "Reb5"+String(number))
+        scoreDefaults.setObject(reb6.text, forKey: "Reb6"+String(number))
+        scoreDefaults.setObject(reb7.text, forKey: "Reb7"+String(number))
+        scoreDefaults.setObject(reb8.text, forKey: "Reb8"+String(number))
+        scoreDefaults.setObject(reb9.text, forKey: "Reb9"+String(number))
+        scoreDefaults.setObject(stl.text, forKey: "Stl"+String(number))
+        scoreDefaults.setObject(stl1.text, forKey: "Stl1"+String(number))
+        scoreDefaults.setObject(stl2.text, forKey: "Stl2"+String(number))
+        scoreDefaults.setObject(stl3.text, forKey: "Stl3"+String(number))
+        scoreDefaults.setObject(stl4.text, forKey: "Stl4"+String(number))
+        scoreDefaults.setObject(stl5.text, forKey: "Stl5"+String(number))
+        scoreDefaults.setObject(stl6.text, forKey: "Stl6"+String(number))
+        scoreDefaults.setObject(stl7.text, forKey: "Stl7"+String(number))
+        scoreDefaults.setObject(stl8.text, forKey: "Stl8"+String(number))
+        scoreDefaults.setObject(stl9.text, forKey: "Stl9"+String(number))
+        scoreDefaults.setObject(name.text, forKey: "Name"+String(number))
+        scoreDefaults.setObject(name1.text, forKey: "Name1"+String(number))
+        scoreDefaults.setObject(name2.text, forKey: "Name2"+String(number))
+        scoreDefaults.setObject(name3.text, forKey: "Name3"+String(number))
+        scoreDefaults.setObject(name4.text, forKey: "Name4"+String(number))
+        scoreDefaults.setObject(name5.text, forKey: "Name5"+String(number))
+        scoreDefaults.setObject(name6.text, forKey: "Name6"+String(number))
+        scoreDefaults.setObject(name7.text, forKey: "Name7"+String(number))
+        scoreDefaults.setObject(name8.text, forKey: "Name8"+String(number))
+        scoreDefaults.setObject(name9.text, forKey: "Name9"+String(number))
         
         scoreDefaults.synchronize()
         
-        return false
+        return true
     }
    
     

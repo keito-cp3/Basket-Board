@@ -13,6 +13,9 @@ class ScoreController: UITableViewController {
 
     
     var scoreList = [String]()
+    var data = [NSData]()
+    var number: Int!
+    var MemoMemo = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,27 @@ class ScoreController: UITableViewController {
         super.didReceiveMemoryWarning()
         
     }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.number = indexPath.row
+        
+        performSegueWithIdentifier("Sub", sender: nil)
+        
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        
+        let subVC = segue.destinationViewController as! ScoreSecondController
+        
+        subVC.number2 = self.number
+        
+        
+    }
+    
+    
+    
+
     
     
     
@@ -53,13 +77,14 @@ class ScoreController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 60
+    }
 
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        _ = segue.destinationViewController as! ScoreSecondController
-    }
-    
+        
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
@@ -85,9 +110,11 @@ class ScoreController: UITableViewController {
     
     
     
+    
+    
     @IBAction func newCreate() {
         
-        let alertController = UIAlertController(title: "タイトル", message: "ここに入力", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "タイトル", message: "", preferredStyle: .Alert)
         
         let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
             (action:UIAlertAction!) -> Void in
@@ -99,6 +126,8 @@ class ScoreController: UITableViewController {
                 self.tableView.insertRowsAtIndexPaths(
                     [NSIndexPath(forRow: 0, inSection: 0)],
                     withRowAnimation: UITableViewRowAnimation.Right)
+                
+                
                 
                 let userDefaults = NSUserDefaults.standardUserDefaults()
                 userDefaults.setObject(self.scoreList, forKey: "scoreList")

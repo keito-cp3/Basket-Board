@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E824E2711D5FFDA50095692E /* BasketPic2.png in Resources */ = {isa = PBXBuildFile; fileRef = E824E2701D5FFDA50095692E /* BasketPic2.png */; };
-		E83C21591D8D38EC00C7DEB2 /* basketball_buzzer2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E83C21581D8D38EC00C7DEB2 /* basketball_buzzer2.mp3 */; };
 		E83C215B1D8D3D2800C7DEB2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E83C215A1D8D3D2800C7DEB2 /* AVFoundation.framework */; };
 		E83D1C8C1D6C56470051BB89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83D1C8B1D6C56470051BB89 /* Assets.xcassets */; };
 		E83D1C981D71AEDF0051BB89 /* 時計の無料アイコン.png in Resources */ = {isa = PBXBuildFile; fileRef = E83D1C971D71AEDF0051BB89 /* 時計の無料アイコン.png */; };
@@ -20,6 +19,9 @@
 		E840C0FA1D3A122100659601 /* Basket_BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E840C0F91D3A122100659601 /* Basket_BoardTests.swift */; };
 		E840C1051D3A122100659601 /* Basket_BoardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E840C1041D3A122100659601 /* Basket_BoardUITests.swift */; };
 		E840C1151D3A176A00659601 /* BasketPic1.png in Resources */ = {isa = PBXBuildFile; fileRef = E840C1141D3A176A00659601 /* BasketPic1.png */; };
+		E86A52281D966262003DA1C4 /* NewScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86A52271D966262003DA1C4 /* NewScoreController.swift */; };
+		E86A522A1D9703AB003DA1C4 /* NormarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86A52291D9703AB003DA1C4 /* NormarViewController.swift */; };
+		E86A522C1D97F78D003DA1C4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86A522B1D97F78D003DA1C4 /* TableViewCell.swift */; };
 		E88FB8541D5B57FA00011007 /* ScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FB8531D5B57FA00011007 /* ScoreController.swift */; };
 		E88FB8561D5C4B0000011007 /* ScoreSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FB8551D5C4B0000011007 /* ScoreSecondController.swift */; };
 		E8F8C85C1D58D05A007FA3F2 /* BoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8C85B1D58D05A007FA3F2 /* BoardController.swift */; };
@@ -45,7 +47,6 @@
 
 /* Begin PBXFileReference section */
 		E824E2701D5FFDA50095692E /* BasketPic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BasketPic2.png; sourceTree = "<group>"; };
-		E83C21581D8D38EC00C7DEB2 /* basketball_buzzer2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = basketball_buzzer2.mp3; path = ../../../Downloads/basketball_buzzer2.mp3; sourceTree = "<group>"; };
 		E83C215A1D8D3D2800C7DEB2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E83D1C8B1D6C56470051BB89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E83D1C971D71AEDF0051BB89 /* 時計の無料アイコン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "時計の無料アイコン.png"; sourceTree = "<group>"; };
@@ -63,6 +64,9 @@
 		E840C1041D3A122100659601 /* Basket_BoardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket_BoardUITests.swift; sourceTree = "<group>"; };
 		E840C1061D3A122100659601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E840C1141D3A176A00659601 /* BasketPic1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BasketPic1.png; sourceTree = "<group>"; };
+		E86A52271D966262003DA1C4 /* NewScoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewScoreController.swift; sourceTree = "<group>"; };
+		E86A52291D9703AB003DA1C4 /* NormarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormarViewController.swift; sourceTree = "<group>"; };
+		E86A522B1D97F78D003DA1C4 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		E88FB8531D5B57FA00011007 /* ScoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreController.swift; sourceTree = "<group>"; };
 		E88FB8551D5C4B0000011007 /* ScoreSecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreSecondController.swift; sourceTree = "<group>"; };
 		E8F8C85B1D58D05A007FA3F2 /* BoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardController.swift; sourceTree = "<group>"; };
@@ -119,7 +123,6 @@
 		E840C0E31D3A122000659601 /* Basket Board */ = {
 			isa = PBXGroup;
 			children = (
-				E83C21581D8D38EC00C7DEB2 /* basketball_buzzer2.mp3 */,
 				E83D1C9B1D73F3540051BB89 /* メモの無料アイコン.png */,
 				E83D1C991D71AFB00051BB89 /* バスケットコート2.png */,
 				E83D1C971D71AEDF0051BB89 /* 時計の無料アイコン.png */,
@@ -127,13 +130,16 @@
 				E840C1141D3A176A00659601 /* BasketPic1.png */,
 				E840C0E41D3A122000659601 /* AppDelegate.swift */,
 				E840C0E81D3A122000659601 /* Main.storyboard */,
-				E88FB8551D5C4B0000011007 /* ScoreSecondController.swift */,
 				E88FB8531D5B57FA00011007 /* ScoreController.swift */,
-				E8F8C85B1D58D05A007FA3F2 /* BoardController.swift */,
+				E88FB8551D5C4B0000011007 /* ScoreSecondController.swift */,
+				E86A52271D966262003DA1C4 /* NewScoreController.swift */,
+				E86A522B1D97F78D003DA1C4 /* TableViewCell.swift */,
 				E8F8C85F1D58D0B0007FA3F2 /* TimerController.swift */,
+				E8F8C85B1D58D05A007FA3F2 /* BoardController.swift */,
 				E840C0ED1D3A122000659601 /* LaunchScreen.storyboard */,
 				E83D1C8B1D6C56470051BB89 /* Assets.xcassets */,
 				E840C0F01D3A122000659601 /* Info.plist */,
+				E86A52291D9703AB003DA1C4 /* NormarViewController.swift */,
 			);
 			path = "Basket Board";
 			sourceTree = "<group>";
@@ -268,7 +274,6 @@
 				E840C1151D3A176A00659601 /* BasketPic1.png in Resources */,
 				E83D1C981D71AEDF0051BB89 /* 時計の無料アイコン.png in Resources */,
 				E83D1C8C1D6C56470051BB89 /* Assets.xcassets in Resources */,
-				E83C21591D8D38EC00C7DEB2 /* basketball_buzzer2.mp3 in Resources */,
 				E83D1C9C1D73F3540051BB89 /* メモの無料アイコン.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,10 +300,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E88FB8541D5B57FA00011007 /* ScoreController.swift in Sources */,
+				E86A522C1D97F78D003DA1C4 /* TableViewCell.swift in Sources */,
 				E840C0E51D3A122000659601 /* AppDelegate.swift in Sources */,
 				E88FB8561D5C4B0000011007 /* ScoreSecondController.swift in Sources */,
+				E86A522A1D9703AB003DA1C4 /* NormarViewController.swift in Sources */,
 				E8F8C8601D58D0B0007FA3F2 /* TimerController.swift in Sources */,
 				E8F8C85C1D58D05A007FA3F2 /* BoardController.swift in Sources */,
+				E86A52281D966262003DA1C4 /* NewScoreController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

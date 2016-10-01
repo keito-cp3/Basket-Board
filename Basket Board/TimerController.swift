@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 
 class TimerController: UIViewController {
     
@@ -25,7 +24,6 @@ class TimerController: UIViewController {
     var MainTimerCount: Int = 600
     var MainTimerNumber: NSTimer = NSTimer()
     
-    var audio: AVAudioPlayer!
     
     
     
@@ -162,11 +160,18 @@ class TimerController: UIViewController {
         if !SubTimerNumber.valid {
             SubTimerCount = SubTimerCount + 1
         }
+        if SubTimerCount > 24 {
+            SubTimerCount = 24
+        }
+
         SubTimer.text = String(SubTimerCount)
     }
     @IBAction func SubMinus() {
         if !SubTimerNumber.valid {
             SubTimerCount = SubTimerCount - 1
+        }
+        if SubTimerCount < 0 {
+            SubTimerCount = 0
         }
         SubTimer.text = String(SubTimerCount)
     }
@@ -197,9 +202,7 @@ class TimerController: UIViewController {
         SubTimer.text = String(SubTimerCount)
         if SubTimerCount == 0 {
             SubTimerNumber.invalidate()
-            let audioPath = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("basketball_buzzer2", ofType: "mp3")!)
-            audio = try? AVAudioPlayer(contentsOfURL: audioPath)
-            audio.play()
+            
         }
     }
     
@@ -215,10 +218,7 @@ class TimerController: UIViewController {
         if MainTimerCount <= 0 {
             MainTimerCount = 0
             MainTimerNumber.invalidate()
-            let audioPath = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("basketball_buzzer2", ofType: "mp3")!)
-            audio = try? AVAudioPlayer(contentsOfURL: audioPath)
-            audio.play()
-        }
+                    }
         let s = MainTimerCount % 60
         let m = MainTimerCount / 60
         MainTimer.text = String(format: "%02d:%02d", m, s)
